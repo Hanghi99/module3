@@ -1,0 +1,1 @@
+<h1>Nghĩa của từ là : <?= $vietnamese;?></h1>
