@@ -2,17 +2,17 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
-                <a class="nav-link" href="index.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Products
+                <a class="nav-link" href="#">
+                    <div class="sb-nav-link-icon"><i class="fab fa-android"></i></div>
+                    Sản Phẩm
                 </a>
-                <a class="nav-link" href="index.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Users
+                <a class="nav-link" href="{{Route('categories.index')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                   Người dùng
                 </a>
-                <a class="nav-link" href="index.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Categories
+                <a class="nav-link" href="{{Route('categories.index')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-address-book"></i></div>
+                   Danh mục sản phẩm
                 </a>
             </div>
         </div>

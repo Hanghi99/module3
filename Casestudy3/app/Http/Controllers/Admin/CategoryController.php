@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Categories;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -13,12 +14,20 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $categories = Categories::all();
+    public function index(Request $request)
+    {      
+        $search = $request->search;
+        if($search )
+        {
+           $categories = DB::table('categories')->where('name','like','%'.$search.'%')->paginate(3); 
+        }
+        else{
+            $categories = Categories::orderBy('name','asc')->paginate(3); 
+        }
         $params     = [
             'categories'=>$categories
         ];
+
         return view('admin.categories.index',$params);
     }
 
