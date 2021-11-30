@@ -19,6 +19,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('address');
             $table->string('email');
             $table->string('website');
+            $table->unsignedInteger('district_id');
             $table->timestamps();
         });
     }

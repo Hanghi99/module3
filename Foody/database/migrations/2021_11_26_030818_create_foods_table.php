@@ -19,7 +19,7 @@ class CreateFoodsTable extends Migration
             $table->longText('description');
             $table->string('image');
             $table->double('price');
-            $table->unsignedInteger('district_id');
+            $table->unsignedInteger('category_id');
             $table->timestamps();
         });
     }
