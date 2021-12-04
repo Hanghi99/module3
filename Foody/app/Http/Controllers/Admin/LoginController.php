@@ -3,26 +3,29 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function getLogin(){
+    public function getLogin()
+    {
         return view('admin.login');
     }
-    public function postLogin(Request $request){
-        if($request->remember = 'remember-me'){
+    public function postLogin(LoginRequest $request)
+    {
+        if ($request->remember = 'remember-me') {
             $remember = true;
         } else {
             $remember = false;
         }
-        $arr = ['email'=>$request->email,'password'=>$request->password];
-        if(Auth::attempt($arr,$remember)){
-dd('thành công');
-        }
-   else{
-dd('thất bại');
+        $arr = ['email' => $request->email, 'password' => $request->password];
+        if (Auth::attempt($arr, $remember)) {
+            return redirect()->route('users.index');
+            // dd('thành công');
+        } else {
+            return back()->withInput()->with('error', 'Tài khoản hoặc mật khẩu không đúng');
         }
     }
 }

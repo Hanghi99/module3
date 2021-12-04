@@ -1,11 +1,10 @@
-<div id="footer">
-    <div>
-        <div class="connect">
-            <a href="http://freewebsitetemplates.com/go/facebook/" class="facebook">facebook</a>
-            <a href="http://freewebsitetemplates.com/go/twitter/" class="twitter">twitter</a>
-            <a href="http://freewebsitetemplates.com/go/googleplus/" class="googleplus">googleplus</a>
-            <a href="http://pinterest.com/fwtemplates/" class="pinterest">pinterest</a>
-        </div>
-        <p>© 2023 Freeeze. All Rights Reserved.</p>
-    </div>
-</div>
+</main>
+
+		<footer class="tm-footer text-center">
+			<p>Copyright &copy; 2021 Hạ Nghi Foods 
+            
+            | Design: <a rel="nofollow" href="https://templatemo.com">--Hạ Nghi--</a></p>
+		</footer>
+	</div>
+	<script src="{{asset('client/js/jquery.min.js')}}"></script>
+	<script src="{{asset('client/js/parallax.min.js')}}"></script>

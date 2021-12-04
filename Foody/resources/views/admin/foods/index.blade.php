@@ -45,7 +45,7 @@
                     <td>{{$food->name}}</td>
                     <td>{{$food->description}}</td>
                     <td><img src="{{asset('admin/images/'.$food->image)}}" style="width:100px"></td>
-                    <td>{{$food->price}}</td>
+                    <td>{{number_format($food->price)." VNĐ"}}</td>
                     <td>{{$food->categories->name}}</td>
                     <td>
                         <a href="{{route('foods.show',$food->id)}}" class="btn btn-primary"><i class="fas fa-eye"></i></a>

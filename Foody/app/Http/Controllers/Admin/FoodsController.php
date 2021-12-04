@@ -19,13 +19,13 @@ class FoodsController extends Controller
     public function index(Request $request)
     {
         $search = $request->search;
-        $foods = Foods::paginate(2);
+        $foods = Foods::paginate(5);
         if($search )
         {
-           $foods = DB::table('foods')->where('name','like','%'.$search.'%')->paginate(2); 
+           $foods = DB::table('foods')->where('name','like','%'.$search.'%')->paginate(5); 
         }
         else{
-            $foods = Foods ::orderBy('name','asc')->paginate(2); 
+            $foods = Foods ::orderBy('name','asc')->paginate(5); 
         }
        $params     = [
             'foods'=> $foods

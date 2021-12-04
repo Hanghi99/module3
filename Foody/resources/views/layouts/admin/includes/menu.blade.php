@@ -2,17 +2,25 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
-                <a class="nav-link" href="foods.index">
+                <a class="nav-link" href="{{Route('foods.index')}}">
                     <div class="sb-nav-link-icon"><i class="fab fa-android"></i></div>
-                    Sản Phẩm
+                Món ăn
                 </a>
-                <a class="nav-link" href="{{Route('categories.index')}}">
+                <a class="nav-link" href="{{Route('users.index')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                   Người dùng
+                   Khách hàng
                 </a>
                 <a class="nav-link" href="{{Route('categories.index')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-address-book"></i></div>
-                   Danh mục sản phẩm
+                  Danh mục
+                </a>
+                <a class="nav-link" href="{{Route('orders.index')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cart-plus"></i></div>
+                  Đơn hàng
+                </a>
+                <a class="nav-link" href="{{Route('order_details.index')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cart-plus"></i></div>
+                  Chi tiết đơn hàng
                 </a>
             </div>
         </div>

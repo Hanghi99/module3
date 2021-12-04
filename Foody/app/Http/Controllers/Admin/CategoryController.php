@@ -62,10 +62,10 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $categories = Categories::find($id);
+        $category = Categories::find($id);
         
         $params = [
-            'categories'=>$categories
+            'categories'=>$category
         ];
         return view('admin.categories.show',$params);
     }

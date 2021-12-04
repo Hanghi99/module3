@@ -3,7 +3,11 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FoodsController;
 use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\Order_detailsController;
+use App\Http\Controllers\Admin\OrdersController;
 use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\Admin\UsersController;
+use App\Http\Middleware\CheckLoginAdmin;
 use Illuminate\Support\Facades\Route;
 
 
@@ -18,18 +22,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
-Route::prefix('admin')->group(function () {
+// Route::get('/', function () {
+//     return view('home');
+// })->name('home');
+Route::middleware([CheckLoginAdmin::class])->prefix('admin')->group(function () {
     Route::resource('categories',CategoryController::class);
-    Route::get('/search',[CustomerController::class, 'search'])->name('categories.search');
+    Route::get('/search',[CategoryController::class, 'search'])->name('categories.search');
     Route::resource('foods',FoodsController::class);
-    Route::get('/login',[LoginController::class,'getLogin'])->name('admin.login');
-    Route::post('/login',[LoginController::class,'postLogin'])->name('admin.postLogin');
+    Route::resource('users',UsersController::class);
+    Route::resource('orders',OrdersController::class);
+    Route::resource('order_details',Order_detailsController::class);
 });
 Route::prefix('client')->group(function(){
-    Route::resource('home',HomeController::class);
+   Route::get('/home',[HomeController::class,"index"])->name('home.index');
+   Route::get('/category/{id}',[HomeController::class,"categories"])->name('home.category');
+   Route::get('/login',[LoginController::class,'getLogin'])->name('admin.login');
+    Route::post('/login',[LoginController::class,'postLogin'])->name('admin.postLogin');
+   
+   Route::get('/cart',[HomeController::class,'cart'])->name('cart');
+   Route::get('/addtocart/{id}',[HomeController::class,'addToCart'])->name('addToCart');
+   Route::post('/fixCartUser/{id}',[HomeController::class,'fixCartUser'])->name('fixCartUser');
+   Route::get('/delelteCartUser/{id}',[HomeController::class,'delelteCartUser'])->name('delelteCartUser');
 });
 
 
