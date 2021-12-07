@@ -36,9 +36,11 @@ Route::middleware([CheckLoginAdmin::class])->prefix('admin')->group(function () 
 });
 Route::prefix('client')->group(function(){
    Route::get('/home',[HomeController::class,"index"])->name('home.index');
+   Route::post('/pay',[HomeController::class,"pay"])->name('home.pay');
    Route::get('/category/{id}',[HomeController::class,"categories"])->name('home.category');
+   Route::get('/checkout',[HomeController::class,"checkout"])->name('home.checkout');
    Route::get('/login',[LoginController::class,'getLogin'])->name('admin.login');
-  
+   
    Route::post('/login',[LoginController::class,'postLogin'])->name('admin.postLogin');
    Route::get('/cart',[HomeController::class,'cart'])->name('cart');
    Route::get('/addtocart/{id}',[HomeController::class,'addToCart'])->name('addToCart');

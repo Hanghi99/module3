@@ -55,5 +55,7 @@
         </tr>
         @endforeach
     </tbody>
+   
 </table>
+<a href="{{route('home.checkout')}}" class="btn btn-primary">Thanh toán </a>
 @endsection
