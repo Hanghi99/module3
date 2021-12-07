@@ -17,11 +17,23 @@ class CheckLoginAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        $User = Auth::user();
-        if($User->level != "Admin" )
+        
+        $user = Auth::user();
+        if(empty($user))
         {
             return redirect()->route('home.index');
         }
-        return $next($request);
+        else
+        {
+            if($user->level == "Admin")
+            {
+                return $next($request);
+            }  
+            else
+            {
+                return redirect()->route('home.index');
+            }
+        }
     }
+          
 }

@@ -31,14 +31,15 @@ Route::middleware([CheckLoginAdmin::class])->prefix('admin')->group(function () 
     Route::resource('foods',FoodsController::class);
     Route::resource('users',UsersController::class);
     Route::resource('orders',OrdersController::class);
+    Route::get('/logout',[LoginController::class,'logout'])->name('logout');
     Route::resource('order_details',Order_detailsController::class);
 });
 Route::prefix('client')->group(function(){
    Route::get('/home',[HomeController::class,"index"])->name('home.index');
    Route::get('/category/{id}',[HomeController::class,"categories"])->name('home.category');
    Route::get('/login',[LoginController::class,'getLogin'])->name('admin.login');
-    Route::post('/login',[LoginController::class,'postLogin'])->name('admin.postLogin');
-   
+  
+   Route::post('/login',[LoginController::class,'postLogin'])->name('admin.postLogin');
    Route::get('/cart',[HomeController::class,'cart'])->name('cart');
    Route::get('/addtocart/{id}',[HomeController::class,'addToCart'])->name('addToCart');
    Route::post('/fixCartUser/{id}',[HomeController::class,'fixCartUser'])->name('fixCartUser');

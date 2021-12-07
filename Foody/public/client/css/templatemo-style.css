@@ -284,6 +284,7 @@ p, address {
 .tm-nav {
   text-align: right;
   margin-top: 30px;
+  font-size:20px;
 }
 
 .tm-nav-ul {
@@ -319,7 +320,7 @@ p, address {
 
 .tm-welcome-section {
   margin: 60px auto;
-  max-width: 655px;
+  width: 100%;
 }
 
 .tm-section-title {
@@ -408,7 +409,7 @@ p, address {
 .tm-gallery-price {
   font-size: 1.25rem;
   color: #2F956D;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 .tm-paging-links {

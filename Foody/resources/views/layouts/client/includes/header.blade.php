@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container " style="background-color:#FFE4B5">
     <!-- Top box -->
     <!-- Logo & Site Name -->
     <div class="placeholder">
