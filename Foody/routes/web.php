@@ -29,8 +29,11 @@ Route::middleware([CheckLoginAdmin::class])->prefix('admin')->group(function () 
     Route::resource('categories',CategoryController::class);
     Route::get('/search',[CategoryController::class, 'search'])->name('categories.search');
     Route::resource('foods',FoodsController::class);
+    Route::get('/search',[FoodsController::class, 'search'])->name('foods.search');
     Route::resource('users',UsersController::class);
+    Route::get('/search',[UsersController::class, 'search'])->name('users.search');
     Route::resource('orders',OrdersController::class);
+    Route::get('/search',[OrdersController::class, 'search'])->name('orders.search');
     Route::get('/logout',[LoginController::class,'logout'])->name('logout');
     Route::resource('order_details',Order_detailsController::class);
 });

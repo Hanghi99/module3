@@ -193,7 +193,7 @@ $totalPrice =   DB::table('carts')
      // Chuyển hướng sang trang thành công
 
      
-    return redirect()->route('home.index');
+    return redirect()->route('home.index')->with('success','Thanh toán thành công, cảm ơn bạn đã ghé thăm cửa hàng');;
     }
     public function checkUserExist($email){
         $user = DB::table('users')->where('email','=',$email)->first();

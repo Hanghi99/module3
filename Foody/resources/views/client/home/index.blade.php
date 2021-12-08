@@ -5,6 +5,9 @@
 <!-- Gallery -->
 <div class="row tm-gallery">
     <!-- gallery page 1 -->
+    @if (Session::has('success'))
+    <div class="alert alert-success">{{session::get('success')}}</div>
+    @endif
 
     <div id="tm-gallery-page-pizza" class="tm-gallery-page">
         @foreach ($foods as $food)

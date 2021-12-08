@@ -15,8 +15,7 @@
                     <nav class="col-md-6 col-12 tm-nav">
                         <ul class="tm-nav-ul">
                             <li class="tm-nav-li"><a href="{{url('client.home')}}" class="tm-nav-link active" >Trang chủ</a></li>
-                            <li class="tm-nav-li"><a href="about.html" class="tm-nav-link">Mô tả</a></li>
-                            <li class="tm-nav-li"><a href="contact.html" class="tm-nav-link">Liên hệ</a></li>
+                         <li class="tm-nav-li"><a href="contact.html" class="tm-nav-link">Liên hệ</a></li>
                             <li class="tm-nav-li"><a href="{{url('client.home.cart')}}" class="tm-nav-link">Giỏ hàng</a></li>
                            
                         </ul>
